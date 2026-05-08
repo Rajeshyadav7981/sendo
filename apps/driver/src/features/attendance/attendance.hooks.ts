@@ -34,7 +34,7 @@ export function useDriverAttendancePaginated(driverId: string, query: Attendance
   });
 }
 
-export function useDeleteAttendance(driverId: string) {
+export function useDeleteAttendance(_driverId: string) {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id: string) => attendanceApi.delete(id),
@@ -66,7 +66,7 @@ export function useSendAttendance() {
   });
 }
 
-export function useUpdateAttendanceFields(driverId: string) {
+export function useUpdateAttendanceFields(_driverId: string) {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: ({ id, body }: { id: string; body: UpdateAttendanceFieldsBody }) =>

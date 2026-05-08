@@ -361,11 +361,6 @@ export default function DriverAttendancePage(): JSX.Element {
     );
   };
 
-  const rows = (list.data ?? []).slice().sort((a, b) => {
-    const ka = String(a.id ?? a._id ?? '');
-    const kb = String(b.id ?? b._id ?? '');
-    return kb.localeCompare(ka);
-  });
 
   const todayKey = new Date().toDateString();
   const todaysAttendance = (list.data ?? []).find((a) => {

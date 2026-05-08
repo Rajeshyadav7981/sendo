@@ -39,7 +39,7 @@ export function useRequestLeave() {
   });
 }
 
-export function useUpdateLeave(driverId: string) {
+export function useUpdateLeave(_driverId: string) {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: ({ id, body }: { id: string; body: UpdateLeaveBody }) =>
@@ -52,7 +52,7 @@ export function useUpdateLeave(driverId: string) {
   });
 }
 
-export function useCancelLeave(driverId: string) {
+export function useCancelLeave(_driverId: string) {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id: string) => leaveApi.cancel(id),

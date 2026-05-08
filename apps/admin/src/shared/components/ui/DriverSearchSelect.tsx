@@ -38,19 +38,22 @@ export function DriverSearchSelect({
 
   const options = useMemo<EntityOption[]>(() => {
     const seen = new Set<string>();
-    return data
-      .map((d) => {
-        const name = fullName(d) || String(d.driverId ?? '').trim();
-        const did = String(d.driverId ?? '').trim();
-        const value = bindBy === 'id' ? did : name;
-        if (!value || seen.has(value)) return null;
-        seen.add(value);
-        const search = `${name} ${did}`.toLowerCase();
-        const label = bindBy === 'id' && name ? `${did} — ${name}` : name || did;
-        return { value, label, search };
-      })
-      .filter((x): x is EntityOption => x !== null)
-      .sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: 'base' }));
+    const out: EntityOption[] = [];
+    for (const d of data) {
+      const name = fullName(d) || String(d.driverId ?? '').trim();
+      const did = String(d.driverId ?? '').trim();
+      const value = bindBy === 'id' ? did : name;
+      if (!value || seen.has(value)) continue;
+      seen.add(value);
+      out.push({
+        value,
+        label: bindBy === 'id' && name ? `${did} — ${name}` : name || did,
+        search: `${name} ${did}`.toLowerCase(),
+      });
+    }
+    return out.sort((a, b) =>
+      a.label.localeCompare(b.label, undefined, { sensitivity: 'base' }),
+    );
   }, [data, bindBy]);
 
   return (

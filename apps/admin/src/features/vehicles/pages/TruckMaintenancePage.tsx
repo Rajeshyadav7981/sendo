@@ -398,7 +398,7 @@ export default function TruckMaintenancePage(): JSX.Element {
 
   const openEdit = (row: MaintenanceRow): void => {
     if (!row.id) return;
-    const base = empty(tab) as Record<string, unknown>;
+    const base = empty(tab) as unknown as Record<string, unknown>;
     const merged: Record<string, unknown> = { ...base };
     Object.entries(row).forEach(([k, v]) => {
       if (v == null) return;
@@ -414,7 +414,7 @@ export default function TruckMaintenancePage(): JSX.Element {
         merged[k] = v;
       }
     });
-    setForm(merged as FormState);
+    setForm(merged as unknown as FormState);
     setDocs({});
     setEditingId(String(row.id));
     setShowForm(true);

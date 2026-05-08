@@ -100,7 +100,7 @@ export default function DriverAttendanceApprovalPage(): JSX.Element {
                           <td className="border-b border-gray-200 px-2 py-2">{fmt(r.startTime)}</td>
                           <td className="border-b border-gray-200 px-2 py-2">{fmt(r.stopTime)}</td>
                           <td className="border-b border-gray-200 px-2 py-2">{fmt(r.duration)}</td>
-                          <td className="border-b border-gray-200 px-2 py-2">{fmt((r as Record<string, string | undefined>).driverShiftLabel ?? (r as Record<string, string | undefined>).shiftDetail)}</td>
+                          <td className="border-b border-gray-200 px-2 py-2">{fmt((r as unknown as Record<string, string | undefined>).driverShiftLabel ?? (r as unknown as Record<string, string | undefined>).shiftDetail)}</td>
                           <td className="border-b border-gray-200 px-2 py-2">
                             <span className={`inline-block rounded-full border px-2 py-0.5 text-xs font-bold ${badgeClass(status)}`}>
                               {status}

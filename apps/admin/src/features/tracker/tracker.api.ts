@@ -178,7 +178,7 @@ export const trackerApi = {
   createEscalation: (body: Escalation) => apiClient.post(`/escalations`, body),
   bulkEscalations: (body: { escalations: Escalation[] }) =>
     apiClient.post(`/escalations/bulk`, body),
-  updateEscalationStatus: (id: string | number, status: 'open' | 'resolved') =>
+  updateEscalationStatus: (id: string | number, status: EscalationStatus) =>
     apiClient.patch(`/escalations/${id}`, { status }),
   deleteEscalation: (id: string | number) => apiClient.delete(`/escalations/${id}`),
 

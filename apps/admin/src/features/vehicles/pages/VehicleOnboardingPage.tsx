@@ -1112,7 +1112,7 @@ export default function VehicleOnboardingPage(): JSX.Element {
                   <td style={S.td}>{fmtDate(v.statePermitValidUpto)}</td>
                   <td style={S.td}>{v.nationalPermit}</td>
                   <td style={S.td}>{fmtDate(v.permitUpto)}</td>
-                  <td style={S.td}>{fmtDate(v.scheduleDate)}</td>
+                  <td style={S.td}>{fmtDate(v.scheduleDate as string | null | undefined)}</td>
                   <td style={S.td}>
                     {v.scheduleInterval != null ? `${v.scheduleInterval} days` : ''}
                   </td>
