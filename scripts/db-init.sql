@@ -1,34 +1,29 @@
 -- Sendo platform — fresh database bootstrap.
--- Run as a superuser (e.g. `psql -U postgres -f db-init.sql`).
--- Safe to re-run; uses IF NOT EXISTS guards.
-
--- Configurable values. Override with `psql -v role_name=... -v db_name=...`.
-\set role_name 'sendo'
-\set role_password 'sendo_change_me'
-\set db_name 'sendo'
-\set schema_name 'sendo'
+-- Run as a Postgres superuser:
+--   sudo -u postgres psql -v ON_ERROR_STOP=1 -f scripts/db-init.sql
+-- Idempotent (safe to re-run).
 
 -- Role (login user the backend uses).
 DO $$
 BEGIN
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = :'role_name') THEN
-    EXECUTE format('CREATE ROLE %I LOGIN PASSWORD %L', :'role_name', :'role_password');
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'sendo') THEN
+    CREATE ROLE sendo LOGIN PASSWORD 'sendo_change_me';
   END IF;
 END
 $$;
 
--- Database (cannot be created inside a transaction; use \gexec).
-SELECT format('CREATE DATABASE %I OWNER %I', :'db_name', :'role_name')
-WHERE NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = :'db_name')
+-- Database (cannot be created inside a transaction; \gexec runs the produced SQL).
+SELECT 'CREATE DATABASE sendo OWNER sendo'
+WHERE NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'sendo')
 \gexec
 
-\connect :db_name
+\connect sendo
 
--- Required extensions (uuid_generate_v4 is used by entities).
+-- Required extensions.
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
--- Application schema (separate from `public` so app objects are namespaced).
-CREATE SCHEMA IF NOT EXISTS :"schema_name" AUTHORIZATION :role_name;
-GRANT USAGE, CREATE ON SCHEMA :"schema_name" TO :role_name;
-ALTER ROLE :role_name SET search_path = :"schema_name", public;
+-- Application schema (separate from `public`).
+CREATE SCHEMA IF NOT EXISTS sendo AUTHORIZATION sendo;
+GRANT USAGE, CREATE ON SCHEMA sendo TO sendo;
+ALTER ROLE sendo SET search_path = sendo, public;
