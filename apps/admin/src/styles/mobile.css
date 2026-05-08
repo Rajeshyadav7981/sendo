@@ -1,0 +1,7 @@
+/* Mobile overrides — rule-of-thumb: anything global responsive lives here */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "sendo-platform",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sendo monorepo: NestJS backend + Vite admin/driver/supervisor frontends.",
+  "workspaces": [
+    "apps/backend",
+    "apps/admin",
+    "apps/driver",
+    "apps/supervisor"
+  ],
+  "scripts": {
+    "build": "bash scripts/build-all.sh",
+    "build:backend": "npm --prefix apps/backend run build",
+    "build:admin": "npm --prefix apps/admin run build",
+    "build:driver": "npm --prefix apps/driver run build",
+    "build:supervisor": "npm --prefix apps/supervisor run build",
+    "dev": "bash scripts/dev.sh",
+    "dev:stop": "bash scripts/dev-stop.sh",
+    "dev:backend": "npm --prefix apps/backend run start:dev",
+    "dev:admin": "npm --prefix apps/admin run dev",
+    "dev:driver": "npm --prefix apps/driver run dev",
+    "dev:supervisor": "npm --prefix apps/supervisor run dev",
+    "typecheck": "npm --prefix apps/backend run typecheck && npm --prefix apps/admin run typecheck && npm --prefix apps/driver run typecheck && npm --prefix apps/supervisor run typecheck",
+    "migration:run": "npm --prefix apps/backend run migration:run",
+    "seed:fresh": "npm --prefix apps/backend run seed:fresh"
+  }
+}

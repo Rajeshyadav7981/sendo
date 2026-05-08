@@ -1,0 +1,185 @@
+.emp-html-bar {
+  margin-bottom: 1rem;
+}
+
+.emp-html-header {
+  border-radius: 0.35rem;
+  border: 1px solid #111;
+  background: #fff;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.emp-html-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.emp-html-header-month {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.emp-html-header-veh {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+}
+
+.emp-html-header-sub {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: #444;
+}
+
+.emp-html-header-sched {
+  color: #333 !important;
+}
+
+.emp-html-section {
+  border-radius: 0.35rem;
+  border: 1px solid #111;
+  background: #fff;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.emp-html-section-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111;
+  padding: 0.35rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  margin-top: -0.25rem;
+  background: #ffc107;
+  border-radius: 0.25rem;
+  border: 1px solid #111;
+}
+
+.emp-html-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.emp-html-mini-table td {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  color: #111;
+}
+
+.emp-html-mini-table td:first-child {
+  color: #333;
+  font-weight: 700;
+  width: 42%;
+  background: #fafafa;
+}
+
+.emp-fill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.emp-fill-cell {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid #111;
+  display: grid;
+  place-items: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.emp-fill-cell.on {
+  background: #22c55e;
+  border-color: #111;
+  color: #fff;
+}
+
+.emp-fill-cell.off {
+  background: #f5f5f5;
+  color: #666;
+  font-weight: 600;
+}
+
+.emp-fill-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.65rem;
+  font-size: 0.72rem;
+  color: #333;
+}
+
+.emp-fill-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.emp-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid #111;
+}
+
+.emp-dot.green {
+  background: #22c55e;
+}
+.emp-dot.red {
+  background: #ef4444;
+}
+.emp-dot.amber {
+  background: #ffc107;
+}
+.emp-dot.blue {
+  background: #3b82f6;
+}
+
+.emp-mileage-bar-wrap {
+  margin-top: 0.75rem;
+  position: relative;
+  height: 22px;
+  background: #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #111;
+}
+
+.emp-mileage-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #ffc107, #f59e0b);
+  transition: width 0.35s ease;
+}
+
+.emp-esc-jump {
+  margin-top: 0.75rem;
+}
+
+.stats-row {
+  margin-bottom: 0.75rem;
+}

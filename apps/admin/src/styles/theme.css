@@ -1,0 +1,324 @@
+/* ===== SENDO GLOBAL THEME — preserved from legacy sendo-ui ====== */
+
+/* ── Page wrapper ─────────────────────────────────────────────── */
+.sendo-page {
+  margin-left: 260px;
+  margin-right: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  min-height: calc(100vh - 70px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Yellow heading bar ───────────────────────────────────────── */
+.sendo-heading {
+  background-color: #ffc107;
+  color: black;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sendo-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 16px;
+  flex-wrap: wrap;
+}
+
+.sendo-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.sendo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+.sendo-table th {
+  background-color: black;
+  color: white;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.sendo-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: black;
+}
+.sendo-table tr:hover td {
+  background-color: #fffbf0;
+}
+
+.sendo-input {
+  padding: 8px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sendo-input:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.25);
+}
+.sendo-select {
+  padding: 8px 30px 8px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 13px;
+  background: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sendo-select:focus {
+  outline: none;
+  border-color: #ffc107;
+}
+
+.sendo-btn-yellow {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+.sendo-btn-yellow:hover {
+  background-color: #e6ac00;
+}
+
+.sendo-btn-black {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+.sendo-btn-black:hover {
+  background-color: #333;
+}
+
+.sendo-btn-outline {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+.sendo-btn-outline:hover {
+  background-color: #f5f5f5;
+}
+
+.sendo-form {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  background-color: white;
+}
+.sendo-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sendo-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+.badge-green {
+  background: #e6f9ee;
+  color: #27ae60;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+.badge-red {
+  background: #fde8e8;
+  color: #c0392b;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+.badge-yellow {
+  background: #fff8e1;
+  color: #d68910;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+.badge-blue {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.sendo-section {
+  padding: 16px;
+}
+
+.sendo-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  padding: 12px 16px;
+}
+.sendo-stat-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.sendo-stat-val {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.sendo-stat-lbl {
+  font-size: 11px;
+  color: #888;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ================================================================
+   MOBILE OVERRIDES ≤768px
+================================================================ */
+@media screen and (max-width: 768px) {
+  .sendo-page {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-shadow: none;
+  }
+  .sendo-heading {
+    font-size: 13px;
+    padding: 10px 12px;
+    letter-spacing: 0.3px;
+  }
+  .sendo-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .sendo-toolbar input,
+  .sendo-toolbar select,
+  .sendo-toolbar button {
+    width: 100%;
+  }
+  .sendo-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sendo-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sendo-table thead,
+  .sendo-table tbody {
+    display: table;
+    width: 100%;
+  }
+  .sendo-table th {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+  .sendo-table td {
+    padding: 7px 6px;
+    font-size: 11px;
+  }
+  .sendo-form {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 10px;
+  }
+  .sendo-input,
+  .sendo-select,
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  .sendo-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .sendo-form .sendo-btn-yellow,
+  .sendo-form .sendo-btn-black,
+  .sendo-form .sendo-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  .sendo-section {
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sendo-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sendo-table th,
+  .sendo-table td {
+    font-size: 10px;
+    padding: 6px 5px;
+  }
+  .sendo-btn-yellow,
+  .sendo-btn-black,
+  .sendo-btn-outline {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+}
